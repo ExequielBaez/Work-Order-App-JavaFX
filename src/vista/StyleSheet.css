@@ -1,0 +1,74 @@
+.backgroundColor{
+    -fx-background-color: linear-gradient(to bottom, #5483ac 10%, #2f64a7 27%, #113d77 61%);
+}
+
+.backgroundColorEquipos{
+    -fx-background-color: linear-gradient(to bottom, #67c77f 10%, #41a638 27%, #106925 61%);
+}
+
+.backgroundColorCorreos{
+    /*-fx-background-color: linear-gradient(to bottom, #a0af44 10%, #939031 27%, #5b551c 61%);*/
+   /* -fx-background-color: linear-gradient(to bottom, #da4838 10%, #9a3030 27%, #8b0613 61%);*/
+    -fx-background-color: linear-gradient(to bottom, #da4838 10%, #bd3a3a 27%, #93000e 61%);
+}
+
+.btnPrincipales {
+    -fx-background-color: #13134a
+}
+
+.btnPrincipales:hover {
+    -fx-background-color: #00cdf6
+}
+
+.btnMenuPedidos {
+    -fx-background-color: #13134a
+ }
+
+.btnMenuPedidos:hover {
+    -fx-background-color: #00cdf6
+ }
+ 
+.panePedidos{
+     -fx-border-radius: 3;
+     -fx-border-width: 2;
+     -fx-border-color: beige;
+ } 
+
+ .btnMenuEquipos {
+    -fx-background-color: #106925
+ }
+
+.btnMenuEquipos:hover {
+    -fx-background-color:yellowgreen
+ }
+ 
+ .paneEquipos{
+     /*-fx-background-color: #3e7048;*/
+     -fx-border-radius: 3;
+     -fx-border-width: 2;
+     -fx-border-color: beige;
+ } 
+ 
+.btnMenuCorreos {
+    -fx-background-color: #590009
+ }
+
+.btnMenuCorreos:hover {
+    -fx-background-color: #db0218
+ }
+ 
+.paneCorreos{
+     -fx-border-radius: 3;
+     -fx-border-width: 2;
+     -fx-border-color: beige;
+ } 
+ 
+.textF1{
+    -fx-prompt-text-fill: #67fc56;
+    -fx-text-fill: white;
+    
+}
+.tableView .cell{
+ -fx-alignment: CENTER;
+    
+}

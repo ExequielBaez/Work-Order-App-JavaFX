@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6bf6cf3b-7a81-4a20-8b4b-8397e5bbf9f1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="lugar" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     pc.`nroPc` AS pc_nroPc,
+     pc.`dependencia` AS pc_dependencia,
+     pc.`marca` AS pc_marca,
+     pc.`pm` AS pc_pm,
+     pc.`proce` AS pc_proce,
+     pc.`mem` AS pc_mem,
+     pc.`disco` AS pc_disco,
+     pc.`so` AS pc_so,
+     pc.`ip` AS pc_ip
+FROM
+     `pc` pc
+WHERE pc.dependencia LIKE $P{lugar}]]>
+	</queryString>
+	<field name="pc_nroPc" class="java.lang.String"/>
+	<field name="pc_dependencia" class="java.lang.String"/>
+	<field name="pc_marca" class="java.lang.String"/>
+	<field name="pc_pm" class="java.lang.String"/>
+	<field name="pc_proce" class="java.lang.String"/>
+	<field name="pc_mem" class="java.lang.String"/>
+	<field name="pc_disco" class="java.lang.String"/>
+	<field name="pc_so" class="java.lang.String"/>
+	<field name="pc_ip" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" forecolor="#0000FF" uuid="c92807e8-2583-4efa-ae5c-5a4fef67b768"/>
+				<imageExpression><![CDATA["leaf_banner_gray.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="6a40ef57-6169-4aa4-9ae5-329a4d6e9ef6"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Equipos ALC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="e615cef0-949c-46d4-b9a3-5103f6745ba8"/>
+				<text><![CDATA[Leaf Gray SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="8543d25d-bccd-4d49-9cdb-22220f6a3d3b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="61" height="15" uuid="93efa111-5b72-449a-ab66-61b08a59ce97"/>
+				<text><![CDATA[pc_nroPc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="61" y="19" width="61" height="15" uuid="05ce56ac-bd89-4703-9d90-b5eca7a7e139"/>
+				<text><![CDATA[pc_dependencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="122" y="19" width="61" height="15" uuid="bbe0ef99-49b3-4ebe-bd34-80111f0b2f1a"/>
+				<text><![CDATA[pc_marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="183" y="19" width="61" height="15" uuid="74b1c5af-784a-403a-bb2d-2b2a1b518f22"/>
+				<text><![CDATA[pc_pm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="244" y="19" width="61" height="15" uuid="5350e213-833d-49e1-b18b-40283f783e76"/>
+				<text><![CDATA[pc_proce]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="305" y="19" width="61" height="15" uuid="9caa70ee-c6c3-4a9c-bed4-6fabaf8137e1"/>
+				<text><![CDATA[pc_mem]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="366" y="19" width="61" height="15" uuid="e74753b8-e6d2-4453-84f8-98d38858fbdc"/>
+				<text><![CDATA[pc_disco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="427" y="19" width="61" height="15" uuid="af68775e-a9b7-46cb-91a1-165c5ab7f2b3"/>
+				<text><![CDATA[pc_so]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="488" y="19" width="61" height="15" uuid="765c835e-0e4e-485c-aab0-fec169a49841"/>
+				<text><![CDATA[pc_ip]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="a6592b11-8c24-4985-9bd9-4140b8723e58"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="61" height="15" uuid="d3f865e3-88bc-410a-98d4-9771861b56ac"/>
+				<textFieldExpression><![CDATA[$F{pc_nroPc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="61" y="0" width="61" height="15" uuid="ef232859-09d2-4bfe-b015-f6ace5860a1c"/>
+				<textFieldExpression><![CDATA[$F{pc_dependencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="122" y="0" width="61" height="15" uuid="b3f27799-c20c-41fa-9e70-2306ef9e0f47"/>
+				<textFieldExpression><![CDATA[$F{pc_marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="183" y="0" width="61" height="15" uuid="65609d84-cedf-47bf-82c2-aed98b799218"/>
+				<textFieldExpression><![CDATA[$F{pc_pm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="244" y="0" width="61" height="15" uuid="837360b8-fa34-46e2-b5ec-b6986caff884"/>
+				<textFieldExpression><![CDATA[$F{pc_proce}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="305" y="0" width="61" height="15" uuid="448ea4b6-7ac3-4b1b-abd4-bf783aada6c1"/>
+				<textFieldExpression><![CDATA[$F{pc_mem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="366" y="0" width="61" height="15" uuid="0d271bcf-6fdf-48a4-adfb-642599c73c3f"/>
+				<textFieldExpression><![CDATA[$F{pc_disco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="427" y="0" width="61" height="15" uuid="94ab5702-5639-4986-99e8-d9b8811dd7b0"/>
+				<textFieldExpression><![CDATA[$F{pc_so}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="488" y="0" width="61" height="15" uuid="6a58a07d-86b5-4f6f-9eaf-a361f7862c66"/>
+				<textFieldExpression><![CDATA[$F{pc_ip}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="3e807da5-fe09-48b1-8cc3-c1fd05b46cf5"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="bba9275d-3fa0-4cfc-bb74-4c82b847ca22"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="965a3425-11b0-4c2c-8a9d-c85ee3a841b7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="98369b6e-700b-4220-a6b3-1332aee684b2"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="780.0" prefWidth="1300.0" styleClass="backgroundColorCorreos" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CorreosController">
+   <children>
+      <HBox layoutX="38.0" layoutY="70.0" prefHeight="100.0" prefWidth="1224.0" styleClass="btnMenuCorreos" stylesheets="@StyleSheet.css">
+         <children>
+            <JFXButton fx:id="btnInicio" onAction="#eventVolver" prefHeight="100.0" prefWidth="316.0" styleClass="btnMenuCorreos" stylesheets="@StyleSheet.css" text="INICIO" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnMenuGenerar" onAction="#eventMenuGenerar" prefHeight="100.0" prefWidth="378.0" styleClass="btnMenuCorreos" stylesheets="@StyleSheet.css" text="GENERAR CORREO" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnMenuVer" onAction="#eventMenuVer" prefHeight="100.0" prefWidth="331.0" styleClass="btnMenuCorreos" stylesheets="@StyleSheet.css" text="VER CORREO" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnMenuReporte" onAction="#eventMenuReporte" prefHeight="100.0" prefWidth="319.0" styleClass="btnMenuCorreos" stylesheets="@StyleSheet.css" text="REPORTES" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></JFXButton>
+         </children>
+      </HBox>
+      <Pane fx:id="panelGCorreo" layoutX="38.0" layoutY="170.0" prefHeight="583.0" prefWidth="1224.0" styleClass="paneCorreos" stylesheets="@StyleSheet.css">
+         <children>
+            <ComboBox fx:id="comboPromotor" layoutX="64.0" layoutY="115.0" onAction="#eventActionPromotor" prefWidth="150.0" promptText="Seleccione" />
+            <TextField fx:id="tfPromotor" layoutX="235.0" layoutY="105.0" prefHeight="45.0" prefWidth="433.0" />
+            <ComboBox fx:id="comboEjecutivo" layoutX="63.0" layoutY="174.0" onAction="#eventActionEjecutivo" prefWidth="150.0" promptText="Seleccione" />
+            <TextField fx:id="tfEjecutivo" layoutX="235.0" layoutY="164.0" prefHeight="45.0" prefWidth="433.0" />
+            <ComboBox fx:id="comboInformativo" layoutX="63.0" layoutY="233.0" onAction="#eventActionInformativo" prefWidth="150.0" promptText="Seleccione" />
+            <TextField fx:id="tfInformativo" layoutX="235.0" layoutY="223.0" prefHeight="45.0" prefWidth="433.0" />
+            <TextArea fx:id="taTexto" layoutX="63.0" layoutY="339.0" prefHeight="200.0" prefWidth="606.0" />
+            <VBox layoutX="731.0" layoutY="127.0" prefHeight="167.0" prefWidth="178.0">
+               <children>
+                  <JFXToggleButton fx:id="tbReservado" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" prefHeight="32.0" prefWidth="178.0" text="Reservado" textFill="#fcfcfc" toggleColor="#910be5" toggleLineColor="#c903d0">
+                     <font>
+                        <Font name="Sitka Subheading Bold" size="16.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="seguridad" />
+                     </toggleGroup></JFXToggleButton>
+                  <JFXToggleButton fx:id="tbConfidencial" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="178.0" text="Confidencial" textFill="#fcfcfc" toggleColor="#910be5" toggleGroup="$seguridad" toggleLineColor="#c903d0">
+                     <font>
+                        <Font name="Sitka Subheading Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></JFXToggleButton>
+                  <JFXToggleButton fx:id="tbSecreto" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" prefHeight="32.0" prefWidth="178.0" text="Secreto" textFill="#fcfcfc" toggleColor="#910be5" toggleGroup="$seguridad" toggleLineColor="#c903d0">
+                     <font>
+                        <Font name="Sitka Subheading Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></JFXToggleButton>
+                  <JFXToggleButton fx:id="tbPublico" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" prefHeight="32.0" prefWidth="178.0" text="Público" textFill="#fcfcfc" toggleColor="#910be5" toggleGroup="$seguridad" toggleLineColor="#c903d0">
+                     <font>
+                        <Font name="Sitka Subheading Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></JFXToggleButton>
+               </children>
+            </VBox>
+            <VBox layoutX="728.0" layoutY="347.0" prefHeight="167.0" prefWidth="178.0">
+               <children>
+                  <JFXToggleButton fx:id="tbFlash" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" prefHeight="32.0" prefWidth="178.0" text="Flash" textFill="WHITE">
+                     <font>
+                        <Font name="Sitka Subheading" size="16.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="precedencia" />
+                     </toggleGroup></JFXToggleButton>
+                  <JFXToggleButton fx:id="tbInmediato" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" prefHeight="32.0" prefWidth="178.0" text="Inmediato" textFill="WHITE" toggleGroup="$precedencia">
+                     <font>
+                        <Font name="Sitka Subheading" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></JFXToggleButton>
+                  <JFXToggleButton fx:id="tbPrioridad" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" prefHeight="32.0" prefWidth="178.0" text="Prioridad" textFill="WHITE" toggleGroup="$precedencia">
+                     <font>
+                        <Font name="Sitka Subheading" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></JFXToggleButton>
+                  <JFXToggleButton fx:id="tbRutina" alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" prefHeight="32.0" prefWidth="178.0" text="Rutina" textFill="WHITE" toggleGroup="$precedencia">
+                     <font>
+                        <Font name="Sitka Subheading" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></JFXToggleButton>
+               </children>
+            </VBox>
+            <ComboBox fx:id="comboExceptuado" layoutX="64.0" layoutY="291.0" onAction="#eventActionExceptuado" prefWidth="150.0" promptText="Seleccione" />
+            <TextField fx:id="tfExceptuado" layoutX="236.0" layoutY="281.0" prefHeight="45.0" prefWidth="433.0" />
+            <Label layoutX="90.0" layoutY="36.0" prefHeight="20.0" prefWidth="111.0" text="NRO CORREO" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfIDCorreo" editable="false" layoutX="198.0" layoutY="35.0" prefHeight="25.0" prefWidth="150.0" />
+            <Label layoutX="395.0" layoutY="36.0" prefHeight="20.0" prefWidth="57.0" text="GHO" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfGho" editable="false" layoutX="455.0" layoutY="34.0" prefHeight="25.0" prefWidth="150.0" />
+            <VBox layoutX="999.0" layoutY="106.0" prefHeight="209.0" prefWidth="183.0">
+               <children>
+                  <Button fx:id="btnGenerar" mnemonicParsing="false" onAction="#eventGenerarCorreo" prefHeight="31.0" prefWidth="191.0" text="Generar" />
+                  <Button fx:id="btnModificar" mnemonicParsing="false" onAction="#eventModificar" prefHeight="31.0" prefWidth="184.0" text="Modificar">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#eventLimpiar" prefHeight="31.0" prefWidth="184.0" text="Limpiar">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnEnviarTxt" mnemonicParsing="false" onAction="#eventEnviarTxt" prefHeight="31.0" prefWidth="191.0" text="Enviar TXT">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <Label layoutX="64.0" layoutY="95.0" prefHeight="20.0" prefWidth="111.0" text="PROMOTOR" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="154.0" prefHeight="20.0" prefWidth="111.0" text="EJECUTIVO" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="213.0" prefHeight="20.0" prefWidth="111.0" text="INFORMATIVO" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="271.0" prefHeight="20.0" prefWidth="111.0" text="EXCEPTUADO" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="781.0" layoutY="85.0" prefHeight="20.0" prefWidth="111.0" text="SEGURIDAD" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="777.0" layoutY="316.0" prefHeight="20.0" prefWidth="111.0" text="PRECEDENCIA" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfFecha" layoutX="643.0" layoutY="34.0" prefHeight="25.0" prefWidth="111.0" visible="false" />
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+      <AnchorPane fx:id="panelTabla" layoutX="38.0" layoutY="170.0" prefHeight="590.0" prefWidth="1224.0" styleClass="paneEquipos" stylesheets="@StyleSheet.css" visible="false">
+         <children>
+            <TableView fx:id="tableView" layoutX="232.0" layoutY="107.0" prefHeight="388.0" prefWidth="765.0">
+               <columns>
+                  <TableColumn fx:id="colNroCorreo" prefWidth="134.0" text="NRO CORREO" />
+                  <TableColumn fx:id="colGho" prefWidth="170.0" text="GHO" />
+                  <TableColumn fx:id="colPromotor" prefWidth="148.0" text="PROMOTOR" />
+                  <TableColumn fx:id="colEjecutivo" prefWidth="157.0" text="EJECUTIVO" />
+                  <TableColumn fx:id="colInformativo" prefWidth="155.0" text="INFORMATIVO" />
+               </columns>
+            </TableView>
+            <TextField fx:id="tfBuscar" layoutX="749.0" layoutY="55.0" promptText="Numero de Correo" />
+            <Button fx:id="btnBuscar" layoutX="550.0" layoutY="52.0" mnemonicParsing="false" onAction="#eventBuscar" prefHeight="31.0" prefWidth="178.0" text="Buscar" />
+            <Button fx:id="btnListar" layoutX="314.0" layoutY="52.0" mnemonicParsing="false" onAction="#eventListar" prefHeight="31.0" prefWidth="178.0" text="Listar" />
+         </children>
+      </AnchorPane>
+      <Pane fx:id="panelReporte" layoutX="38.0" layoutY="170.0" prefHeight="583.0" prefWidth="1224.0" styleClass="panePedidos" stylesheets="@StyleSheet.css" visible="false">
+         <children>
+            <Button fx:id="btnReporteCorreo" layoutX="652.0" layoutY="135.0" mnemonicParsing="false" onAction="#eventReporteCorreo" prefHeight="45.0" prefWidth="210.0" text="Generar Reporte por Promotor" />
+            <Label layoutX="344.0" layoutY="148.0" prefHeight="19.0" prefWidth="101.0" text="Promotor" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="245.0" layoutY="68.0" prefHeight="17.0" prefWidth="149.0" text="Indique Para Filtrar" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="pickFechaDesde" layoutX="442.0" layoutY="263.0" />
+            <Label layoutX="381.0" layoutY="266.0" prefHeight="19.0" prefWidth="50.0" text="Desde" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnReporteFecha" layoutX="652.0" layoutY="270.0" mnemonicParsing="false" onAction="#eventReporteFechas" prefHeight="45.0" prefWidth="210.0" text="Generar Reporte por Fechas" />
+            <DatePicker fx:id="pickFechaHasta" layoutX="442.0" layoutY="298.0" />
+            <Label layoutX="381.0" layoutY="301.0" prefHeight="19.0" prefWidth="50.0" text="Hasta" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Banner Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfReporteCorreo" layoutX="442.0" layoutY="145.0" prefHeight="25.0" prefWidth="178.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
